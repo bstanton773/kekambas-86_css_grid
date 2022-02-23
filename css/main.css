@@ -1,12 +1,41 @@
 .container{
     display: grid;
     border: 1px solid black;
-    height: 500px;
+    height: 100vh;
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
     grid-template-rows: 100px 100px auto 100px;
     grid-template-areas: 
     "nav nav nav nav nav"
-    ". main main main ads"
+    "side main main main ads"
     "side main main main ads"
     "side main main main .";
+    /* justify-items: center;
+    align-items: center; */
+    place-items: center;
+}
+
+.nav{
+    grid-area: nav;
+}
+
+.main{
+    grid-area: main;
+}
+
+.side{
+    grid-area: side;
+    justify-self: start;
+    align-self: end;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(100px,4);
+}
+
+.ads{
+    grid-area: ads;
+}
+
+.test{
+    grid-column: 5/6;
+    grid-row: 4/5;
 }
